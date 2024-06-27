@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  * {
+    margin: 0px;
+  }
+  h3 {
+    margin: 20px 10px 50px 17px;
+    font-size: 30px;
+    font-weight: 400;
+  }
+  h4 {
+    margin: 0px 10px 20px 17px;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  #p {
+    margin: 0px 17px 30px 17px;
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 300;
+  }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lightgray;
+      width: 100%;
+        height: auto;
+        margin: 0px 0px 60px 0px;
+    }
+    .container {
+margin: auto;
+        width: 270px;;
+        padding: 20px;
+        border-radius: 10px;
+      border: 1px solid #a9a9a9;
+        background-color: lightgray;
+        box-shadow: 20px 20px 9px lightgray;
+    }
+  .calculator-btoon {
+transition-duration: 2s;  
+      width: 54px;
+        height: 50px;
+        margin: 5px;
+        font-size: 20px;
+      border: 0.5px solid black;
+        border-radius: 10px;
+        color: #000;
+        cursor: pointer;
+        background-color: #dc381f;
+  }
+    .calculator-bton {
+transition-duration: 2s;        
+        width: 54px;
+        height: 50px;
+        margin: 5px;
+        font-size: 20px;
+      border: 0.7px solid #000;
+        border-radius: 10px;
+        color: #000;
+        cursor: pointer;
+        background-color: darkorange;
+    }
+    .calculator-btn {
+transition-duration: 2s;        
+        width: 54px;
+        height: 50px;
+        margin: 5px;
+      border: 0.05px solid gray;
+        font-size: 20px;
+        border-radius: 10px;
+        background-color: white;
+        color: #000;
+        cursor: pointer;
+    }
+    .calculator-btn.zero {
+        width: calc(55.4px * 2 + 11px);
+    }
+    .result-box { 
+display: flex;
+ transition-duration: 0.5s;
+
+align-items: center;
+justify-content: end;      
+        width: auto;
+        height: 68px;
+        margin: 0 0 10px 0;
+        padding: 5px 10px 5px 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: black;
+      border: 0.05px solid gray;
+        box-sizing: border-box;
+      overflow-x: scroll;
+    }  
+  .result-box:hover {
+    color: red;
+    background-color: #f4f4f4;
+    opacity: 0.6;
+    transform: scale(1.0001);
+  }
+  #title {
+    background-color: #c0c0c0;
+    border-radius: 6px;
+    width: 180px;
+    height: auto;
+    padding: 0px;
+    margin: 0px 5px 20px 5px;
+    text-align: center;
+    font-size: 19px;
+    transform: translateY(-10px);
+    font-weight: 380;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(40px);
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  @media (min-width: 770px) {
+    body {
+      transition-duration: 3.3s;  
+        font-family: Arial, sans-serif;
+        background-color: #98afc7;
+         width: 100%;
+        height: auto;
+        margin: 0px 0px 60px 0px;
+    }
+    
+    h3 {
+      transition-duration: 3.3s;  
+      font-size: 50px;
+      margin: 80px 0 80px 20px;
+      padding: 80px 0 0 30px;
+    }
+        .container {
+       transition-duration: 3.3s;     
+margin-top: 140px;
+        width: 750px;
+          height: 925px;
+        padding: 20px;
+        border-radius: 30px;
+      border: 1.4px solid #000;
+        background-color: white;
+        box-shadow: 20px 20px 9px lightgray;
+    }
+  #calculator-btoon {
+transition-duration: 3.3s;  
+      width: 172px;
+        height: 120px;
+        margin: 6px;
+        font-size: 30px;
+      border: 1.4px outset black;
+        border-radius: 10px;
+        color: #000;
+        cursor: pointer;
+        background-color: #dc381f;
+  }
+    #calculator-bton {
+transition-duration: 3.3s;        
+        width: 172px;
+        height: 120px;
+        margin: 6px;
+        font-size: 30px;
+      border: 1.4px outset #000;
+        border-radius: 10px;
+        color: #000;
+        cursor: pointer;
+        background-color: darkorange;
+    }
+    .calculator-btn {
+transition-duration: 3.3s;        
+        width: 172px;
+        height: 120px;
+        margin: 6px;
+      border: 1.4px outset black;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: white;
+        color: #000;
+        cursor: pointer;
+    }
+    .calculator-btn.zero {
+        width: calc(173px * 2 + 13px);
+    }
+    .result-box { 
+display: flex;
+      border: 1.4px inset #000;
+ transition-duration: 3.3s;
+
+align-items: center;
+justify-content: end;      
+        width: auto;
+        height: 140px;
+        margin: 0 0 10px 0;
+        padding: 5px 10px 5px 10px;
+        font-size: 34px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: black;
+      border: 0.05px solid gray;
+        box-sizing: border-box;
+      overflow-x: scroll;
+    }  
+    #title {
+      transition-duration: 3.3s;
+    background-color: #c0c0c0;
+    border-radius: 6px;
+    width: 360px;
+    height: auto;
+    padding: 10px;
+    margin: 0px 5px 30px 5px;
+    text-align: center;
+    font-size: 30px;
+    transform: translateY(-10px);
+    font-weight: 380;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(180px);
+  }
+    #pp {
+      transition-duration: 3.3s;
+      padding: 23px;
+      font-size: 26px;
+      margin-left: 30px;
+    }
+  }
+
+</style>
+</head>
+<body>
+  <h3>My unique cculator 😂😂😂</h3>
+  <p id="pp">Welcome to my unique cculator! This is made and designed to help you when balancing your books or managing daily finances. My cculator is a straightforward and easy to use. Ensuring precise bookkeeping, accurate calculations, and perfect for balancing accounts. </p>
+  <div class="container">
+  <p id="title"><i>'sayantipik kakyuleytor'</i></p>  
+    <div class="result-box" id="result">0</div>
+    <div>
+        <button id="calculator-btoon"class="calculator-btoon" onclick="clearResult()">C</button>
+        <button id="calculator-btoon"class="calculator-btoon" onclick="appendToResult('%')">%</button>
+        <button id="calculator-btoon"class="calculator-btoon" onclick="deleteLast()">←</button>
+        <button id="calculator-bton"class="calculator-bton" onclick="appendToResult('/')">÷</button>
+    </div>
+    <div>
+        <button class="calculator-btn" onclick="appendToResult('7')">7</button>
+        <button class="calculator-btn" onclick="appendToResult('8')">8</button>
+        <button class="calculator-btn" onclick="appendToResult('9')">9</button>
+        <button id="calculator-bton"class="calculator-bton" onclick="appendToResult('*')">x</button>
+    </div>
+    <div>
+        <button class="calculator-btn" onclick="appendToResult('4')">4</button>
+        <button class="calculator-btn" onclick="appendToResult('5')">5</button>
+        <button class="calculator-btn" onclick="appendToResult('6')">6</button>
+        <button id="calculator-bton"class="calculator-bton" onclick="appendToResult('-')">-</button>
+    </div>
+    <div>
+        <button class="calculator-btn" onclick="appendToResult('1')">1</button>
+        <button class="calculator-btn" onclick="appendToResult('2')">2</button>
+        <button class="calculator-btn" onclick="appendToResult('3')">3</button>
+        <button id="calculator-bton"class="calculator-bton" onclick="appendToResult('+')">+</button>
+    </div>
+    <div>
+        <button class="calculator-btn zero" onclick="appendToResult('0')">0</button>
+        <button class="calculator-btn" onclick="appendToResult('.')">.</button>
+        <button id="calculator-bton"class="calculator-bton" onclick="calculateResult()">=</button>
+    </div>
+</div>
+
+<script>
+    function appendToResult(value) {
+        var resultBox = document.getElementById("result");
+        if (resultBox.innerHTML === '0' && value !== '.') {
+            resultBox.innerHTML = value;
+        } else {
+            resultBox.innerHTML += value;
+        }
+    }
+
+    function calculateResult() {
+        var resultBox = document.getElementById("result");
+        resultBox.innerHTML = `pogi si brian! 😂😂😂`;
+    }
+
+    function clearResult() {
+        document.getElementById("result").innerHTML = '0';
+    }
+  
+    function deleteLast() {
+        var resultBox = document.getElementById("result");
+        resultBox.innerHTML = resultBox.innerHTML.slice(0, -1);
+    }
+</script>
+
+</body>
+</html>
